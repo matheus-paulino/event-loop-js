@@ -37,6 +37,8 @@ const products = (idCategory) => {
 
 const start = () => {
 
+    startPreLoader()
+
     store()
         /**
          * 1- Carrega a loja
@@ -60,5 +62,6 @@ const start = () => {
         .catch(err => {
             console.log(err)
         })
+        .finally(() => endPreLoader())
 
 }
